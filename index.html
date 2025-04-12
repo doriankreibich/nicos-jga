@@ -19,6 +19,8 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 10px;
+            position: relative;
+            z-index: 10;
         }
 
         .shape {
@@ -27,13 +29,14 @@
             border-radius: 50%;
             filter: blur(80px);
             opacity: 0.6;
+            z-index: -1;
         }
 
         .shape1 {
             width: 150px;
             height: 150px;
             top: 5%;
-            left: 10%;
+            left: 5%;
             background: rgba(0, 200, 255, 0.4);
         }
 
@@ -41,7 +44,7 @@
             width: 200px;
             height: 200px;
             bottom: 5%;
-            right: 5%;
+            right: 3%;
             background: rgba(255, 100, 100, 0.4);
         }
 
@@ -91,6 +94,82 @@
             color: #00ffcc;
         }
 
+        .side-image {
+            display: block;
+            position: absolute;
+            width: 60px;
+            height: auto;
+            z-index: 5;
+            transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.4));
+        }
+
+        #knutschaa {
+            top: 10px;
+            left: 5px;
+            transform: rotate(-10deg);
+        }
+        #knutschaa:hover { transform: scale(1.05) rotate(-10deg); }
+
+        #derDenker {
+            bottom: 10px;
+            left: 10px;
+            transform: rotate(8deg);
+        }
+        #derDenker:hover { transform: scale(1.05) rotate(8deg); }
+
+        #daumenHoch {
+            top: 10px;
+            right: 5px;
+            transform: rotate(10deg);
+        }
+        #daumenHoch:hover { transform: scale(1.05) rotate(10deg); }
+
+        #campusSchnallen {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(-8deg);
+        }
+        #campusSchnallen:hover { transform: scale(1.05) rotate(-8deg); }
+
+
+        @media (min-width: 992px) {
+            .side-image {
+                width: 180px;
+                filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.4));
+            }
+
+            #knutschaa {
+                top: 10%;
+                left: 15px;
+                transform: rotate(-8deg);
+            }
+            #knutschaa:hover { transform: scale(1.05) rotate(-8deg); }
+
+            #derDenker {
+                top: 50%;
+                bottom: auto;
+                left: 40px;
+                transform: rotate(5deg);
+            }
+            #derDenker:hover { transform: scale(1.05) rotate(5deg); }
+
+            #daumenHoch {
+                top: 15%;
+                right: 25px;
+                transform: rotate(10deg);
+            }
+            #daumenHoch:hover { transform: scale(1.05) rotate(10deg); }
+
+            #campusSchnallen {
+                top: 55%;
+                bottom: auto;
+                right: 10px;
+                transform: rotate(-5deg);
+            }
+            #campusSchnallen:hover { transform: scale(1.05) rotate(-5deg); }
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -111,6 +190,11 @@
 <body>
 <div class="shape shape1"></div>
 <div class="shape shape2"></div>
+
+<img src="images/Knutschaa.png" alt="Knutschaa" id="knutschaa" class="side-image">
+<img src="images/derDenker.png" alt="Der Denker" id="derDenker" class="side-image">
+<img src="images/Daumenhoch.png" alt="Daumen hoch" id="daumenHoch" class="side-image">
+<img src="images/CampusSchnallen.png" alt="Campus Schnallen" id="campusSchnallen" class="side-image">
 
 <div class="container">
     <h1>🔥 Nicos <span class="highlight">Legendärer Junggesellenabschied</span>! 🔥</h1>
